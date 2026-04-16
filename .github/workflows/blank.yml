@@ -41,4 +41,5 @@ jobs:
           curl -sSfL https://github.com/mitsuhiko/minijinja/releases/latest/download/minijinja-cli-installer.sh | sh
           ls -al $HOME/.local/bin
           echo "Hello {{ name }}" | minijinja-cli - -Dname=World
+          minijinja-cli --strict $HOME/connecting.md $HOME/gent.yml > $HOME/test.md 
         
