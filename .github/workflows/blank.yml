@@ -42,5 +42,6 @@ jobs:
           ls -al $HOME/.local/bin
           echo "GITHUB_WORKSPACE is $GITHUB_WORKSPACE"
           echo "Hello {{ name }}" | minijinja-cli - -Dname=World
-          minijinja-cli --strict $GITHUB_WORKSPACE/connecting.md $GITHUB_WORKSPACE/gent.yml > $GITHUB_WORKSPACE/test.md 
+          minijinja-cli --strict $GITHUB_WORKSPACE/connecting.md $GITHUB_WORKSPACE/gent.yml > $GITHUB_WORKSPACE/test.md
+          cat $GITHUB_WORKSPACE/test.md
         
