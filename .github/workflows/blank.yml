@@ -40,6 +40,7 @@ jobs:
         run: | 
           curl -sSfL https://github.com/mitsuhiko/minijinja/releases/latest/download/minijinja-cli-installer.sh | sh
           ls -al $HOME/.local/bin
+          echo "GITHUB_WORKSPACE is $GITHUB_WORKSPACE"
           echo "Hello {{ name }}" | minijinja-cli - -Dname=World
-          minijinja-cli --strict $HOME/connecting.md $HOME/gent.yml > $HOME/test.md 
+          minijinja-cli --strict $GITHUB_WORKSPACE/connecting.md $GITHUB_WORKSPACE/gent.yml > $GITHUB_WORKSPACE/test.md 
         
