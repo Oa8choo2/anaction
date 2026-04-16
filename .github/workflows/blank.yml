@@ -37,6 +37,7 @@ jobs:
 
       # get minijinja
       - name: Get minijinja  
-        run: curl -sSfL https://github.com/mitsuhiko/minijinja/releases/latest/download/minijinja-cli-installer.sh | sh
-        run: ls -al $HOME/.local/bin
+        run: | 
+          curl -sSfL https://github.com/mitsuhiko/minijinja/releases/latest/download/minijinja-cli-installer.sh | sh
+          ls -al $HOME/.local/bin
         
