@@ -70,6 +70,9 @@ jobs:
       # check git
       - name: Check git
         run: | 
+          # configure Git
+          git config user.email "${{github.event.pusher.email}}"
+          git config user.name "${{github.event.pusher.name}}"
           set -xv
           git status
           git add --verbose 'test2.md'
