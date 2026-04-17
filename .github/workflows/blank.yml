@@ -59,6 +59,9 @@ jobs:
           echo "GITHUB_WORKSPACE is $GITHUB_WORKSPACE"
           echo "Hello {{ name }}" | minijinja-cli - -Dname=World
           minijinja-cli --strict $GITHUB_WORKSPACE/connecting.md $GITHUB_WORKSPACE/gent.yml > $GITHUB_WORKSPACE/test.md
+          pwd
+          minijinja-cli --strict connecting.md gent.yml > test2.md
+          ls -alrt
           cat $GITHUB_WORKSPACE/test.md
 
       # upload to ghpages
