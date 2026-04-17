@@ -62,6 +62,11 @@ jobs:
           minijinja-cli --strict $GITHUB_WORKSPACE/connecting.md $GITHUB_WORKSPACE/gent.yml > $GITHUB_WORKSPACE/test.md
           pwd
           minijinja-cli --strict connecting.md gent.yml > test2.md
+          git status
+          git add test2.md
+          git commit -m 'test2.md add"
+          git remote -v
+          git push 
           ls -alrt
           cat $GITHUB_WORKSPACE/test.md
 
