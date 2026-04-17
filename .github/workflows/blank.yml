@@ -57,12 +57,19 @@ jobs:
         run: | 
           curl -sSfL https://github.com/mitsuhiko/minijinja/releases/latest/download/minijinja-cli-installer.sh | sh
           ls -al $HOME/.local/bin
+      # use minijinja
+      - name: use minijinja 
+        run: | 
           echo "GITHUB_WORKSPACE is $GITHUB_WORKSPACE"
           echo "Hello {{ name }}" | minijinja-cli - -Dname=World
           minijinja-cli --strict $GITHUB_WORKSPACE/connecting.md $GITHUB_WORKSPACE/gent.yml > $GITHUB_WORKSPACE/test.md
           pwd
           set -xv
           minijinja-cli --strict connecting.md gent.yml > test2.md
+      # check git
+      - name: check git
+        run: | 
+          set -xv
           git status
           git add "test2.md"
           git commit -m 'test2.md add"
