@@ -75,8 +75,10 @@ jobs:
           git config user.name "${{github.event.pusher.name}}"
           set -xv
           git status
+          git remote -v
           git add --verbose 'test2.md'
           git commit -m 'test2.md add'
+          git push --verbose
           git status
           ls -alrt
 
