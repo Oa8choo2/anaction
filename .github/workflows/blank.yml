@@ -68,8 +68,9 @@ jobs:
           git commit -m 'test2.md add"
           git remote -v
           git push 
+          git status
           ls -alrt
-          cat $GITHUB_WORKSPACE/test.md
+          # cat $GITHUB_WORKSPACE/test.md
 
       # upload to ghpages
       - name: Setup Pages
