@@ -92,6 +92,7 @@ jobs:
       # run zensical debug with python -duv 
       - name: Build the site
         run: |
+          export PATH=.venv/bin:$PATH
           cd zdocs
           zensical build --clean
 
