@@ -71,6 +71,11 @@ Copyright &copy; 2026 hpc@ugent.be
 # final repo_url = "https://github.com/hpcugent/vsc_user_docs/"
 repo_url = "https://github.com/Oa8choo2/anaction/"
 
+# edit_uri = edit/master/{docs_dir} -- seems hardcoded
+# https://raw.githubusercontent.com/Oa8choo2/anaction/refs/heads/main/zdocs/docs/about.md
+# https://github.com/Oa8choo2/anaction/edit/main/zdocs/docs/about.md
+edit_uri = edit/main/zdocs/docs
+
 # ----------------------------------------------------------------------------
 # Section for configuring theme options
 # ----------------------------------------------------------------------------
