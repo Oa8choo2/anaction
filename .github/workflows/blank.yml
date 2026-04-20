@@ -84,11 +84,14 @@ jobs:
 
       - name: Where is zensical 
         run: |
+          set -vx
           find $HOME -type f -name zensical -ls
           export PATH=.venv/bin:$PATH
           echo $PATH | tr \: \\n
           which -a zensical
           zensical --version
+          cd zdocs
+          zensical build --clean
 
       # run zensical debug with python -duv 
       - name: Build the site
