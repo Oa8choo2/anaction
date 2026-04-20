@@ -86,7 +86,7 @@ jobs:
         run: |
           find $HOME -type f -name zensical -ls
           export PATH=.venv/bin:$PATH
-          echo $PATH
+          echo $PATH | tr \: \\n
           which -a zensical
           zensical --version
 
@@ -95,7 +95,7 @@ jobs:
         run: |
           export PATH=$HOME/.venv/bin:$PATH
           cd zdocs
-          zensical build --clean
+          .venv/bin/zensical build --clean
 
       # check git
       - name: Check git
