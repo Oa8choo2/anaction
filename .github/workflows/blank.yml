@@ -90,15 +90,12 @@ jobs:
           echo $PATH | tr \: \\n
           which -a zensical
           zensical --version
-          cd zdocs
-          zensical build --clean
 
       # run zensical debug with python -duv 
       - name: Build the site
         run: |
-          export PATH=$HOME/.venv/bin:$PATH
           cd zdocs
-          .venv/bin/zensical build --clean
+          zensical build --clean
 
       # check git
       - name: Check git
