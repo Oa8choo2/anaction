@@ -79,11 +79,19 @@ jobs:
       - name: Install the project
         run: uv sync --all-extras --dev        
 
-      - run: uv pip install zensical
-      - run: find /home/runner/work/ -name zensical -ls
-      - run: zensical --version
+      - name: Install zensical
+        run: uv pip install zensical
+
+      - name: Where is zensical 
+        run: |
+          find $HOME -type f -name zensical -ls
+          export PATH=.venv/bin:$PATH
+          echo $PATH
+          zensical --version
+
       # run zensical debug with python -duv 
-      - run: |
+      - name: Build the site
+        run: |
           cd zdocs
           zensical build --clean
 
