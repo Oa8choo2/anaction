@@ -87,12 +87,13 @@ jobs:
           find $HOME -type f -name zensical -ls
           export PATH=.venv/bin:$PATH
           echo $PATH
+          which -a zensical
           zensical --version
 
       # run zensical debug with python -duv 
       - name: Build the site
         run: |
-          export PATH=.venv/bin:$PATH
+          export PATH=$HOME/.venv/bin:$PATH
           cd zdocs
           zensical build --clean
 
