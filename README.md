@@ -9,8 +9,9 @@ test a github action
 * zdocs/docs -> md files after minijinja conversion
 * zdocs/site -> html files after build by zensical
 * https://oa8choo2.github.io/anaction -> site hosting all files
-  * https://oa8choo2.github.io/anaction/mkdocs/docs/HPC/connecting.md
-  * https://oa8choo2.github.io/anaction/zdocs/docs/connecting.md
+  * https://oa8choo2.github.io/anaction/mkdocs/docs/HPC/connecting.md -> original md file
+  * https://oa8choo2.github.io/anaction/zdocs/docs/connecting.md -> converted md file
+  * https://oa8choo2.github.io/anaction/zdocs/site/connecting -> converted html version
   * https://oa8choo2.github.io/anaction/ -> final site [TOBE]
 
 

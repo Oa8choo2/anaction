@@ -65,8 +65,42 @@ jobs:
           minijinja-cli --strict $GITHUB_WORKSPACE/connecting.md $GITHUB_WORKSPACE/gent.yml > $GITHUB_WORKSPACE/test.md
           pwd
           set -xv
-          minijinja-cli --strict connecting.md gent.yml > test2.md
-          minijinja-cli --strict mkdocs/docs/HPC/connecting.md gent.yml > zdocs/docs/connecting.md
+          # minijinja-cli --strict connecting.md gent.yml > test2.md
+          for i in mkdocs/docs/HPC/*.md
+            do
+              target=$(basename "$i") 
+              minijinja-cli --strict "$i" gent.yml > zdocs/docs/$target
+            done
+          
+      # add zensical    
+      - name: Install uv
+        uses: astral-sh/setup-uv@v7
+
+#      - name: update uv
+#        run: uv self update
+      - run: uv self version
+
+      - name: Install the project
+        run: uv sync --all-extras --dev        
+
+      - name: Install zensical
+        run: uv pip install zensical
+
+      - name: Where is zensical 
+        run: |
+          set -vx
+          find $HOME -type f -name zensical -ls
+          export PATH=$GITHUB_WORKSPACE/.venv/bin:$PATH
+          echo $PATH | tr \: \\n
+          which -a zensical
+          zensical --version
+
+      # run zensical debug with python -duv 
+      - name: Build the site
+        run: |
+          export PATH=$GITHUB_WORKSPACE/.venv/bin:$PATH
+          cd zdocs
+          zensical build --clean
 
       # check git
       - name: Check git
@@ -77,9 +111,9 @@ jobs:
           set -xv
           git status
           git remote -v
-          git add --verbose 'test2.md'
-          git add --verbose 'zdocs/docs/connecting.md'
-          git commit -m 'test2.md and connecting.md add'
+          git add --verbose .
+          # git add --verbose 'zdocs/docs/connecting.md'
+          git commit -m 'adding everything'
           git push --verbose
           git status
           ls -alrt
