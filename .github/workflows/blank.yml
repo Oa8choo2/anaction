@@ -86,7 +86,7 @@ jobs:
         run: |
           set -vx
           find $HOME -type f -name zensical -ls
-          export PATH=.venv/bin:$PATH
+          export PATH=$GITHUB_WORKSPACE/.venv/bin:$PATH
           echo $PATH | tr \: \\n
           which -a zensical
           zensical --version
