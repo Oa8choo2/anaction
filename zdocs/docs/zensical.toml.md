@@ -18,12 +18,12 @@ site_name = "hpc gent test site"
 # meaningful description of the site content for use by search engines.
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_description
-site_description = "A new project generated from the default zensical project."
+site_description = "The hpc docs generated with zensical."
 
 # The site_author attribute. This is used in the HTML head element.
 #
 # Read more: https://zensical.org/docs/setup/basics/#site_author
-site_author = "<my name here>"
+site_author = "hpc@.ugent.be"
 
 # The site_url is the canonical URL for your site. When building online
 # documentation you should set this.
@@ -35,8 +35,7 @@ site_author = "<my name here>"
 #
 # Read more: https://zensical.org/docs/setup/basics/#copyright
 copyright = """
-Copyright &copy; 2026 The authors of this site
-and maybe some others too ...
+Copyright &copy; 2026 hpc@ugent.be
 """
 
 # Zensical supports both implicit navigation and explicitly defined navigation.
@@ -70,7 +69,8 @@ and maybe some others too ...
 #extra_javascript = ["javascripts/extra.js"]
 
 # repo url
-repo_url = "https://github.com/hpcugent/vsc_user_docs/"
+# final repo_url = "https://github.com/hpcugent/vsc_user_docs/"
+repo_url = "https://github.com/Oa8choo2/anaction/"
 
 # ----------------------------------------------------------------------------
 # Section for configuring theme options
@@ -133,7 +133,7 @@ features = [
     # will generate a button that allows the user to view the Markdown
     # code for the current page.
     # https://zensical.org/docs/setup/repository/#code-actions
-    #"content.action.view",
+    "content.action.view",
 
     # Code annotations allow you to add an icon with a tooltip to your
     # code blocks to provide explanations at crucial points.
@@ -199,7 +199,7 @@ features = [
     # In order to provide a better user experience on slow connections when
     # using instant navigation, a progress indicator can be enabled.
     # https://zensical.org/docs/setup/navigation/#progress-indicator
-    #"navigation.instant.progress",
+    "navigation.instant.progress",
 
     # When navigation paths are activated, a breadcrumb navigation is rendered
     # above the title of each page
@@ -209,7 +209,7 @@ features = [
     # When pruning is enabled, only the visible navigation items are included
     # in the rendered HTML, reducing the size of the built site by 33% or more.
     # https://zensical.org/docs/setup/navigation/#navigation-pruning
-    #"navigation.prune",
+    "navigation.prune",
 
     # When sections are enabled, top-level sections are rendered as groups in
     # the sidebar for viewports above 1220px, but remain as-is on mobile.
