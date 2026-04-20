@@ -106,7 +106,7 @@ jobs:
       - name: zensical.toml
         run: |
           echo '```toml' > zdocs/docs/zensical.toml.md
-          cat zdocs/zensical >> zdocs/docs/zensical.toml.md
+          cat zdocs/zensical.toml >> zdocs/docs/zensical.toml.md
           echo '```' > zdocs/docs/zensical.toml.md
 
       # check git
