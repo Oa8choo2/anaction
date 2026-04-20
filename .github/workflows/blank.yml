@@ -65,8 +65,12 @@ jobs:
           minijinja-cli --strict $GITHUB_WORKSPACE/connecting.md $GITHUB_WORKSPACE/gent.yml > $GITHUB_WORKSPACE/test.md
           pwd
           set -xv
-          minijinja-cli --strict connecting.md gent.yml > test2.md
-          minijinja-cli --strict mkdocs/docs/HPC/connecting.md gent.yml > zdocs/docs/connecting.md
+          # minijinja-cli --strict connecting.md gent.yml > test2.md
+          for i in mkdocs/docs/HPC/*.md
+            do
+              target=$(basename "$i") 
+              minijinja-cli --strict "$i" gent.yml > zdocs/docs/$target
+            done
           
       # add zensical    
       - name: Install uv
