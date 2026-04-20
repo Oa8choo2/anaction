@@ -102,6 +102,13 @@ jobs:
           cd zdocs
           zensical build --clean
 
+      # add markdown version of zensical.toml
+      - name: zensical.toml
+        run: |
+          echo '```toml' > zdocs/docs/zensical.toml.md
+          cat zdocs/zensical >> zdocs/docs/zensical.toml.md
+          echo '```' > zdocs/docs/zensical.toml.md
+
       # check git
       - name: Check git
         run: | 
