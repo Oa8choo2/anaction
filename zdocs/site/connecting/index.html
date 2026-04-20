@@ -1,0 +1,1144 @@
+
+<!doctype html>
+<html lang="en" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+        <meta name="description" content="A new project generated from the default zensical project.">
+      
+      
+        <meta name="author" content="<my name here>">
+      
+      
+      
+      
+      
+        
+      
+      
+      <link rel="icon" href="../assets/images/favicon.png">
+      <meta name="generator" content="zensical-0.0.33">
+    
+    
+      
+        <title>Connecting to the HPC infrastructure - hpc gent test site</title>
+      
+    
+    
+      
+        
+      
+      <link rel="stylesheet" href="../assets/stylesheets/modern/main.53a7feaf.min.css">
+      
+        
+          
+        
+        <link rel="stylesheet" href="../assets/stylesheets/modern/palette.dfe2e883.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Inter:300,300i,400,400i,500,500i,700,700i%7CJetBrains+Mono:400,400i,700,700i&amp;display=fallback">
+        <style>:root{--md-text-font:"Inter";--md-code-font:"JetBrains Mono"}</style>
+      
+    
+    
+    <script>__md_scope=new URL("..",location),__md_hash=e=>[...e].reduce(((e,t)=>(e<<5)-e+t.charCodeAt(0)),0),__md_get=(e,t=localStorage,a=__md_scope)=>JSON.parse(t.getItem(a.pathname+"."+e)),__md_set=(e,t,a=localStorage,_=__md_scope)=>{try{a.setItem(_.pathname+"."+e,JSON.stringify(t))}catch(e){}},document.documentElement.setAttribute("data-platform",navigator.platform)</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer" aria-label="Navigation"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#connecting-to-the-hpc-infrastructure" class="md-skip">
+          Skip to content
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+  
+
+<header class="md-header md-header--shadow" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="Header">
+    <a href="./.." title="hpc gent test site" class="md-header__button md-logo" aria-label="hpc gent test site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer" aria-label="Navigation">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-menu" viewBox="0 0 24 24"><path d="M4 5h16M4 12h16M4 19h16"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            hpc gent test site
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              Connecting to the HPC infrastructure
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to dark mode"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="Switch to dark mode" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-sun" viewBox="0 0 24 24"><circle cx="12" cy="12" r="4"/><path d="M12 2v2M12 20v2M4.93 4.93l1.41 1.41M17.66 17.66l1.41 1.41M2 12h2M20 12h2M6.34 17.66l-1.41 1.41M19.07 4.93l-1.41 1.41"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="none" data-md-color-scheme="slate" data-md-color-primary="indigo" data-md-color-accent="indigo"  aria-label="Switch to light mode"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="Switch to light mode" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-moon" viewBox="0 0 24 24"><path d="M20.985 12.486a9 9 0 1 1-9.473-9.472c.405-.022.617.46.402.803a6 6 0 0 0 8.268 8.268c.344-.215.825-.004.803.401"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search" aria-label="Search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-search" viewBox="0 0 24 24"><path d="m21 21-4.34-4.34"/><circle cx="11" cy="11" r="8"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog" aria-label="Search">
+  <button type="button" class="md-search__button">
+    Search
+  </button>
+</div>
+      
+    
+    <div class="md-header__source">
+      
+        <a href="https://github.com/hpcugent/vsc_user_docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+      
+    </div>
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+
+<nav class="md-nav md-nav--primary" aria-label="Navigation" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="./.." title="hpc gent test site" class="md-nav__button md-logo" aria-label="hpc gent test site" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-book-open" viewBox="0 0 24 24"><path d="M12 7v14M3 18a1 1 0 0 1-1-1V4a1 1 0 0 1 1-1h5a4 4 0 0 1 4 4 4 4 0 0 1 4-4h5a1 1 0 0 1 1 1v13a1 1 0 0 1-1 1h-6a3 3 0 0 0-3 3 3 3 0 0 0-3-3z"/></svg>
+
+    </a>
+    hpc gent test site
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/hpcugent/vsc_user_docs/" title="Go to repository" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 7.2.0 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2026 Fonticons, Inc.--><path fill="currentColor" d="M439.6 236.1 244 40.5c-5.4-5.5-12.8-8.5-20.4-8.5s-15 3-20.4 8.4L162.5 81l51.5 51.5c27.1-9.1 52.7 16.8 43.4 43.7l49.7 49.7c34.2-11.8 61.2 31 35.5 56.7-26.5 26.5-70.2-2.9-56-37.3L240.3 199v121.9c25.3 12.5 22.3 41.8 9.1 55-6.4 6.4-15.2 10.1-24.3 10.1s-17.8-3.6-24.3-10.1c-17.6-17.6-11.1-46.9 11.2-56v-123c-20.8-8.5-24.6-30.7-18.6-45L142.6 101 8.5 235.1C3 240.6 0 247.9 0 255.5s3 15 8.5 20.4l195.6 195.7c5.4 5.4 12.7 8.4 20.4 8.4s15-3 20.4-8.4l194.7-194.7c5.4-5.4 8.4-12.8 8.4-20.4s-3-15-8.4-20.4"/></svg>
+  </div>
+  <div class="md-source__repository">
+    GitHub
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting to the HPC infrastructure
+  
+
+    
+  </span>
+  
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="././" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    
+  
+    Connecting to the HPC infrastructure
+  
+
+    
+  </span>
+  
+  
+
+      </a>
+      
+        
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connection-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection restrictions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-time-connection-to-the-hpc-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Time connection to the HPC infrastructure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First Time connection to the HPC infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#congratulations-youre-on-the-hpc-infrastructure-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Congratulations, you're on the HPC infrastructure now
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-files-tofrom-the-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transfer Files to/from the HPC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Files to&#x2f;from the HPC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-a-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using a GUI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using scp
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using scp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-copy-a-file-to-the-hpc-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: copy a file to the hpc cluster
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-sftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using sftp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-file-transfer-for-large-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fast file transfer for large datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-login-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing login nodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+              
+              <div class="md-sidebar md-sidebar--secondary" data-md-component="sidebar" data-md-type="toc" >
+                <div class="md-sidebar__scrollwrap">
+                  
+                    
+                    
+                    
+                      
+                    
+                    
+                      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+                      <div class="md-sidebar-button__wrapper">
+                        <label class="md-sidebar-button" for="__toc"></label>
+                      </div>
+                    
+                  
+                  <div class="md-sidebar__inner">
+                    
+
+
+<nav class="md-nav md-nav--secondary" aria-label="On this page">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      On this page
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#connection-restrictions" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connection restrictions
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#first-time-connection-to-the-hpc-infrastructure" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        First Time connection to the HPC infrastructure
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="First Time connection to the HPC infrastructure">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#connect" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Connect
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#congratulations-youre-on-the-hpc-infrastructure-now" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Congratulations, you're on the HPC infrastructure now
+      
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#transfer-files-tofrom-the-hpc" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Transfer Files to/from the HPC
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Transfer Files to&#x2f;from the HPC">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#using-a-gui" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using a GUI
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-scp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using scp
+      
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="Using scp">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#example-copy-a-file-to-the-hpc-cluster" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Example: copy a file to the hpc cluster
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#using-sftp" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Using sftp
+      
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#fast-file-transfer-for-large-datasets" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Fast file transfer for large datasets
+      
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#changing-login-nodes" class="md-nav__link">
+    <span class="md-ellipsis">
+      
+        Changing login nodes
+      
+    </span>
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              
+                
+
+
+
+
+              
+              <article class="md-content__inner md-typeset">
+                
+                  
+  
+    <a href="https://github.com/hpcugent/vsc_user_docs//edit/master/docs/connecting.md" title="Edit this page" class="md-content__button md-icon" rel="edit">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-file-pen" viewBox="0 0 24 24"><path d="M12.659 22H18a2 2 0 0 0 2-2V8a2.4 2.4 0 0 0-.706-1.706l-3.588-3.588A2.4 2.4 0 0 0 14 2H6a2 2 0 0 0-2 2v9.34"/><path d="M14 2v5a1 1 0 0 0 1 1h5M10.378 12.622a1 1 0 0 1 3 3.003L8.36 20.637a2 2 0 0 1-.854.506l-2.867.837a.5.5 0 0 1-.62-.62l.836-2.869a2 2 0 0 1 .506-.853z"/></svg>
+    </a>
+  
+  
+
+
+<h1 id="connecting-to-the-hpc-infrastructure">Connecting to the HPC infrastructure<a class="headerlink" href="#connecting-to-the-hpc-infrastructure" title="Permanent link">&para;</a></h1>
+<p>This text will help you to start using the HPC infrastructure at UGent.</p>
+<p>Before you can really start using the HPC clusters, there are several
+things you need to do or know:</p>
+<ol>
+<li>
+<p>To work on the HPC infrastructure you need some basic knowledge of the <a href="">Linux</a>
+   operating system, using a <a href="">terminal</a> and the <a href="">shell (bash)</a>.
+   Make sure you understand these concepts before continuing.</p>
+</li>
+<li>
+<p>To protect you, your data and the HPC infrastructure, access is limited, and
+   connections must be encrypted (by using ssh and https)</p>
+</li>
+<li>
+<p>You need to <strong>log on to the HPC cluster</strong> with your <a href="">VSC credentials</a>.<br />
+   The connection is done by using an SSH client or the <a href="../web_portal/"><strong>HPC web
+   portal</strong></a>.
+   If you do not have VSC credentials yet, fix this now.</p>
+</li>
+<li>
+<p>Before you can do some work, you'll have to <strong>transfer your files</strong>
+    that you need from your own computer to the HPC cluster. At the end
+    of a job, you might want to transfer some files back.</p>
+</li>
+<li>
+<p>Optionally, if you wish to use programs with a <strong>graphical user
+    interface</strong>, you will need an X-server on your client system and log
+    in to the login nodes with X-forwarding enabled.</p>
+</li>
+<li>
+<p>Often several <strong>versions</strong> of software packages and libraries are
+    installed, so you need to select the ones you need. To manage
+    different versions efficiently, the VSC clusters use so-called
+    <strong>modules</strong>, so you will need to select and load the modules that
+    you need.</p>
+</li>
+</ol>
+<h2 id="connection-restrictions">Connection restrictions<a class="headerlink" href="#connection-restrictions" title="Permanent link">&para;</a></h2>
+<p>For security reasons restrictions are in place that limit from where
+you can connect to the VSC HPC infrastructure.</p>
+<p>VSC login nodes are only directly accessible from within university
+networks, and from (most) Belgian commercial internet providers.
+$$$ ook eduroam?</p>
+<p>All other IP domains are blocked by default. If you are connecting from
+an IP address that is not allowed direct access, you have the following
+options to get access to VSC login nodes:</p>
+<ul>
+<li>
+<p>Use a VPN connection to connect to the UGent network
+  (recommended).
+  See <a href="https://helpdesk.ugent.be/vpn/en/">https://helpdesk.ugent.be/vpn/en/</a> for more information.</p>
+</li>
+<li>
+<p>Add your IP address automatically to the list of trusted IP addresses.
+  Go to the <a href="https://firewall.vscentrum.be">VSC firewall</a> and log in with your
+  UGent account.</p>
+<ul>
+<li>While this web connection is active new SSH sessions can be
+    started.</li>
+<li>Active SSH sessions will remain active even when this web page
+    is closed.</li>
+</ul>
+</li>
+<li>
+<p>Contact your HPC support team (via <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#104;&#112;&#99;&#64;&#117;&#103;&#101;&#110;&#116;&#46;&#98;&#101;">&#104;&#112;&#99;&#64;&#117;&#103;&#101;&#110;&#116;&#46;&#98;&#101;</a>) and ask them to add your
+    IP range (e.g., for industry access, automated processes) to the list of
+    trusted IP addresses.</p>
+</li>
+</ul>
+<p>Trying to establish an SSH connection from an unknown IP address
+will give an error message like this one:</p>
+<div class="language-ABNF highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>ssh_exchange_<span class="nc">identification</span>:<span class="w"> </span><span class="nc">read</span>:<span class="w"> </span><span class="nc">Connection</span><span class="w"> </span><span class="nc">reset</span><span class="w"> </span><span class="nc">by</span><span class="w"> </span><span class="nc">peer</span>
+</span></code></pre></div>
+<h2 id="first-time-connection-to-the-hpc-infrastructure">First Time connection to the HPC infrastructure<a class="headerlink" href="#first-time-connection-to-the-hpc-infrastructure" title="Permanent link">&para;</a></h2>
+<p>The remaining content in this text is primarily focused for people utilizing
+a terminal with SSH.</p>
+<p>If you want to use the web portal, read following page:
+<a href="../web_portal/">Using the HPC web portal</a>.</p>
+<p>If you have any issues connecting to the HPC after you've followed these
+steps, see <a href="../../troubleshooting/#issues-connecting-to-login-node">Issues connecting to login
+node</a> to troubleshoot.
+steps, see <a href="../troubleshooting/#issues-connecting-to-login-node">Issues connecting to login
+node</a> to troubleshoot.</p>
+<h3 id="connect">Connect<a class="headerlink" href="#connect" title="Permanent link">&para;</a></h3>
+<p>Open up a terminal and enter the following command to connect to the HPC.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>ssh<span class="w"> </span>vsc40000@login.hpc.ugent.be
+</span></code></pre></div>
+<p>Here, user vsc40000 wants to make a connection to the "hpcugent"
+cluster at UGent via the login node "login.hpc.ugent.be", so replace vsc40000 with your own VSC id in the above command.</p>
+<p>The first time you make a connection to the login node, you will be asked to
+verify the authenticity of the login node.</p>
+<blockquote>
+<p>The authenticity of host 'login.hpc.ugent.be (157.193.252.74)' can't be
+established.<br />
+ED25519 key fingerprint is SHA256:8AJg3lPN27y6i+um7rFx3xoy42U8ZgqNe4LsEycHILA.<br />
+This key is not known by any other names.<br />
+Are you sure you want to continue connecting (yes/no/[fingerprint])?  </p>
+</blockquote>
+<p>Please check <a href="../../troubleshooting/#warning-message-when-first-connecting-to-new-host">"Warning message when first connecting to new
+host"</a> on
+how to handle this.</p>
+<p>$$$ dit hoort in troubleshootig doc
+A possible error message you can get if you previously saved your
+private key somewhere else than the default location
+(<code>$HOME/.ssh/id_rsa</code>):</p>
+<blockquote>
+<p>Permission denied (publickey,gssapi-keyex,gssapi-with-mic).</p>
+</blockquote>
+<p>In this case, use the <code>-i</code> option for the <code>ssh</code> command to specify the
+location of your private key. For example:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>ssh<span class="w"> </span>-i<span class="w"> </span>/home/example/my_keys
+</span></code></pre></div>
+<h2 id="congratulations-youre-on-the-hpc-infrastructure-now">Congratulations, you're on the HPC infrastructure now<a class="headerlink" href="#congratulations-youre-on-the-hpc-infrastructure-now" title="Permanent link">&para;</a></h2>
+<p>To find out where you have landed you can <strong>p</strong>rint the current <strong>w</strong>orking
+<strong>d</strong>irectory:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>$<span class="w"> </span><span class="nb">pwd</span>
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>/user/home/gent/vsc400/vsc40000
+</span></code></pre></div>
+<p>Your new private home directory is "/user/home/gent/vsc400/vsc40000". Here you can create your
+own subdirectory structure, copy and prepare your applications, compile and
+test them and submit your jobs on the HPC.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-4-1"><a id="__codelineno-4-1" name="__codelineno-4-1" href="#__codelineno-4-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>/apps/gent/tutorials
+</span><span id="__span-4-2"><a id="__codelineno-4-2" name="__codelineno-4-2" href="#__codelineno-4-2"></a>$<span class="w"> </span>ls
+</span><span id="__span-4-3"><a id="__codelineno-4-3" name="__codelineno-4-3" href="#__codelineno-4-3"></a>Intro-HPC/
+</span></code></pre></div>
+<p>This directory currently contains all training material for the <strong><em>Introduction
+to the HPC</em></strong>. More relevant training material to work with the HPC
+can always be added later in this directory.</p>
+<p>You can now explore the content of this directory with the "ls -l"
+(<strong>l</strong>ist<strong>s</strong> <strong>l</strong>ong) and the "cd" (<strong>c</strong>hange <strong>d</strong>irectory) commands:</p>
+<p>As we are interested in the use of the <strong><em>HPC</em></strong>, move further to
+<strong><em>Intro-HPC</em></strong> and explore the contents up to 2 levels deep (-L 2):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-5-1"><a id="__codelineno-5-1" name="__codelineno-5-1" href="#__codelineno-5-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>Intro-HPC
+</span><span id="__span-5-2"><a id="__codelineno-5-2" name="__codelineno-5-2" href="#__codelineno-5-2"></a>$<span class="w"> </span>tree<span class="w"> </span>-L<span class="w"> </span><span class="m">2</span>
+</span><span id="__span-5-3"><a id="__codelineno-5-3" name="__codelineno-5-3" href="#__codelineno-5-3"></a>.
+</span><span id="__span-5-4"><a id="__codelineno-5-4" name="__codelineno-5-4" href="#__codelineno-5-4"></a><span class="s1">&#39;-- examples</span>
+</span><span id="__span-5-5"><a id="__codelineno-5-5" name="__codelineno-5-5" href="#__codelineno-5-5"></a><span class="s1">    |-- Compiling-and-testing-your-software-on-the-HPC</span>
+</span><span id="__span-5-6"><a id="__codelineno-5-6" name="__codelineno-5-6" href="#__codelineno-5-6"></a><span class="s1">    |-- Fine-tuning-Job-Specifications</span>
+</span><span id="__span-5-7"><a id="__codelineno-5-7" name="__codelineno-5-7" href="#__codelineno-5-7"></a><span class="s1">    |-- Multi-core-jobs-Parallel-Computing</span>
+</span><span id="__span-5-8"><a id="__codelineno-5-8" name="__codelineno-5-8" href="#__codelineno-5-8"></a><span class="s1">    |-- Multi-job-submission</span>
+</span><span id="__span-5-9"><a id="__codelineno-5-9" name="__codelineno-5-9" href="#__codelineno-5-9"></a><span class="s1">    |-- Program-examples</span>
+</span><span id="__span-5-10"><a id="__codelineno-5-10" name="__codelineno-5-10" href="#__codelineno-5-10"></a><span class="s1">    |-- Running-batch-jobs</span>
+</span><span id="__span-5-11"><a id="__codelineno-5-11" name="__codelineno-5-11" href="#__codelineno-5-11"></a><span class="s1">    |-- Running-jobs-with-input</span>
+</span><span id="__span-5-12"><a id="__codelineno-5-12" name="__codelineno-5-12" href="#__codelineno-5-12"></a><span class="s1">    |-- Running-jobs-with-input-output-data</span>
+</span><span id="__span-5-13"><a id="__codelineno-5-13" name="__codelineno-5-13" href="#__codelineno-5-13"></a><span class="s1">    |-- example.pbs</span>
+</span><span id="__span-5-14"><a id="__codelineno-5-14" name="__codelineno-5-14" href="#__codelineno-5-14"></a><span class="s1">    &#39;</span>--<span class="w"> </span>example.sh
+</span><span id="__span-5-15"><a id="__codelineno-5-15" name="__codelineno-5-15" href="#__codelineno-5-15"></a><span class="m">9</span><span class="w"> </span>directories,<span class="w"> </span><span class="m">5</span><span class="w"> </span>files
+</span></code></pre></div>
+<p>This directory contains:</p>
+<ol>
+<li>This <strong><em>HPC Tutorial</em></strong></li>
+<li>An <strong><em>examples</em></strong> subdirectory, containing all the examples that you need in
+   this Tutorial, as well as examples that might be useful for your specific
+   applications.</li>
+</ol>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-6-1"><a id="__codelineno-6-1" name="__codelineno-6-1" href="#__codelineno-6-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>examples
+</span></code></pre></div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>Typing <code>cd ex</code> followed by <span class="keys"><kbd class="key-tab">Tab</kbd></span> (the Tab-key) will generate the <code>cd
+examples</code> command. <strong>Command-line completion</strong> (also <strong>tab completion</strong>)
+is a common feature of the bash command line interpreter, in which the
+program automatically fills in partially typed commands.</p>
+</div>
+<div class="admonition tip">
+<p class="admonition-title">Tip</p>
+<p>For more exhaustive tutorials about Linux usage, see Appendix <a href="../../useful_linux_commands">Useful Linux
+Commands</a></p>
+</div>
+<p>The first action is to copy the contents of the HPC examples directory to
+your home directory, so that you have your own personal copy and that you can
+start using the examples. The "-r" option of the copy command will also copy
+the contents of the sub-directories "<strong>r</strong>ecursively".</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-7-1"><a id="__codelineno-7-1" name="__codelineno-7-1" href="#__codelineno-7-1"></a>cp<span class="w"> </span>-r<span class="w"> </span>/apps/gent/tutorials/Intro-HPC/examples<span class="w"> </span>~/
+</span></code></pre></div>
+<p>Go to your home directory, check your own private examples directory, ... and
+start working.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-8-1"><a id="__codelineno-8-1" name="__codelineno-8-1" href="#__codelineno-8-1"></a><span class="nb">cd</span>
+</span><span id="__span-8-2"><a id="__codelineno-8-2" name="__codelineno-8-2" href="#__codelineno-8-2"></a>ls<span class="w"> </span>-l
+</span></code></pre></div>
+<p>Upon connecting you will see a login message containing your last login time
+stamp and a basic overview of the current cluster utilisation.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-9-1"><a id="__codelineno-9-1" name="__codelineno-9-1" href="#__codelineno-9-1"></a>Last<span class="w"> </span>login:<span class="w"> </span>Thu<span class="w"> </span>Mar<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">13</span>:15:09<span class="w"> </span><span class="m">2026</span><span class="w"> </span>from<span class="w"> </span>gligarha02.gastly.os
+</span><span id="__span-9-2"><a id="__codelineno-9-2" name="__codelineno-9-2" href="#__codelineno-9-2"></a>
+</span><span id="__span-9-3"><a id="__codelineno-9-3" name="__codelineno-9-3" href="#__codelineno-9-3"></a><span class="w"> </span>STEVIN<span class="w"> </span>HPC-UGent<span class="w"> </span>infrastructure<span class="w"> </span>status<span class="w"> </span>on<span class="w"> </span>Mon,<span class="w"> </span><span class="m">19</span><span class="w"> </span>Apr<span class="w"> </span><span class="m">2026</span><span class="w"> </span><span class="m">10</span>:00:01
+</span><span id="__span-9-4"><a id="__codelineno-9-4" name="__codelineno-9-4" href="#__codelineno-9-4"></a><span class="w">      </span>cluster<span class="w">         </span>-<span class="w"> </span>full<span class="w"> </span>-<span class="w"> </span>free<span class="w"> </span>-<span class="w">  </span>part<span class="w"> </span>-<span class="w"> </span>total<span class="w"> </span>-<span class="w"> </span>running<span class="w"> </span>-<span class="w"> </span>queued
+</span><span id="__span-9-5"><a id="__codelineno-9-5" name="__codelineno-9-5" href="#__codelineno-9-5"></a><span class="w">                        </span>nodes<span class="w">  </span>nodes<span class="w">   </span>free<span class="w">   </span>nodes<span class="w">   </span><span class="nb">jobs</span><span class="w">      </span><span class="nb">jobs</span>
+</span><span id="__span-9-6"><a id="__codelineno-9-6" name="__codelineno-9-6" href="#__codelineno-9-6"></a><span class="w"> </span>-------------------------------------------------------------------------
+</span><span id="__span-9-7"><a id="__codelineno-9-7" name="__codelineno-9-7" href="#__codelineno-9-7"></a><span class="w">           </span>joltik<span class="w">           </span><span class="m">6</span><span class="w">      </span><span class="m">0</span><span class="w">      </span><span class="m">1</span><span class="w">      </span><span class="m">10</span><span class="w">        </span><span class="m">29</span><span class="w">       </span><span class="m">18</span>
+</span><span id="__span-9-8"><a id="__codelineno-9-8" name="__codelineno-9-8" href="#__codelineno-9-8"></a><span class="w">            </span>doduo<span class="w">          </span><span class="m">22</span><span class="w">      </span><span class="m">0</span><span class="w">     </span><span class="m">75</span><span class="w">     </span><span class="m">128</span><span class="w">      </span><span class="m">1397</span><span class="w">    </span><span class="m">11933</span>
+</span><span id="__span-9-9"><a id="__codelineno-9-9" name="__codelineno-9-9" href="#__codelineno-9-9"></a><span class="w">         </span>accelgor<span class="w">           </span><span class="m">4</span><span class="w">      </span><span class="m">3</span><span class="w">      </span><span class="m">2</span><span class="w">       </span><span class="m">9</span><span class="w">        </span><span class="m">18</span><span class="w">        </span><span class="m">1</span>
+</span><span id="__span-9-10"><a id="__codelineno-9-10" name="__codelineno-9-10" href="#__codelineno-9-10"></a><span class="w">          </span>donphan<span class="w">           </span><span class="m">0</span><span class="w">      </span><span class="m">0</span><span class="w">     </span><span class="m">16</span><span class="w">      </span><span class="m">16</span><span class="w">        </span><span class="m">16</span><span class="w">       </span><span class="m">13</span>
+</span><span id="__span-9-11"><a id="__codelineno-9-11" name="__codelineno-9-11" href="#__codelineno-9-11"></a><span class="w">          </span>gallade<span class="w">           </span><span class="m">2</span><span class="w">      </span><span class="m">0</span><span class="w">      </span><span class="m">5</span><span class="w">      </span><span class="m">16</span><span class="w">        </span><span class="m">19</span><span class="w">      </span><span class="m">136</span>
+</span><span id="__span-9-12"><a id="__codelineno-9-12" name="__codelineno-9-12" href="#__codelineno-9-12"></a>
+</span><span id="__span-9-13"><a id="__codelineno-9-13" name="__codelineno-9-13" href="#__codelineno-9-13"></a>
+</span><span id="__span-9-14"><a id="__codelineno-9-14" name="__codelineno-9-14" href="#__codelineno-9-14"></a>For<span class="w"> </span>a<span class="w"> </span>full<span class="w"> </span>view<span class="w"> </span>of<span class="w"> </span>the<span class="w"> </span>current<span class="w"> </span>loads<span class="w"> </span>and<span class="w"> </span>queues<span class="w"> </span>see:
+</span><span id="__span-9-15"><a id="__codelineno-9-15" name="__codelineno-9-15" href="#__codelineno-9-15"></a>https://hpc.ugent.be/clusterstate/
+</span><span id="__span-9-16"><a id="__codelineno-9-16" name="__codelineno-9-16" href="#__codelineno-9-16"></a>Updates<span class="w"> </span>on<span class="w"> </span>current<span class="w"> </span>system<span class="w"> </span>status<span class="w"> </span>and<span class="w"> </span>planned<span class="w"> </span>maintenance<span class="w"> </span>can<span class="w"> </span>be<span class="w"> </span>found<span class="w"> </span>on
+</span><span id="__span-9-17"><a id="__codelineno-9-17" name="__codelineno-9-17" href="#__codelineno-9-17"></a>https://www.ugent.be/hpc/en/infrastructure/status
+</span></code></pre></div>
+<p>You can exit the connection at anytime by entering:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-10-1"><a id="__codelineno-10-1" name="__codelineno-10-1" href="#__codelineno-10-1"></a>$<span class="w"> </span><span class="nb">exit</span>
+</span><span id="__span-10-2"><a id="__codelineno-10-2" name="__codelineno-10-2" href="#__codelineno-10-2"></a><span class="nb">logout</span>
+</span><span id="__span-10-3"><a id="__codelineno-10-3" name="__codelineno-10-3" href="#__codelineno-10-3"></a>Connection<span class="w"> </span>to<span class="w"> </span>login.hpc.ugent.be<span class="w"> </span>closed.
+</span></code></pre></div>
+<h2 id="transfer-files-tofrom-the-hpc">Transfer Files to/from the HPC<a class="headerlink" href="#transfer-files-tofrom-the-hpc" title="Permanent link">&para;</a></h2>
+<p>Before you can do some work, you'll have to <strong>transfer the files</strong> you need
+from your desktop or department to the cluster. At the end of a job, you might
+want to transfer some files back.</p>
+<p>The preferred way to transfer files is by using an scp or sftp via the secure
+OpenSSH protocol. All operating systems ship with an implementation of OpenSSH,
+so you don't need to install any third-party software to use it. Just open a
+terminal window and jump in!</p>
+<h3 id="using-a-gui">Using a GUI<a class="headerlink" href="#using-a-gui" title="Permanent link">&para;</a></h3>
+<p>If you want a graphical user interface (GUI) please consider using the <a href="">web portal</a>.</p>
+<p>If you prefer a graphical user interface (GUI) to transfer files back and forth
+to the HPC, you can use a file manager. Open your file manager and press
+<span class="keys"><kbd>Ctrl</kbd><span>+</span><kbd>l</kbd></span> if you are on Linux or <span class="keys"><kbd class="key-command">Cmd</kbd><span>+</span><kbd>k</kbd></span> if you are using MacOS.</p>
+<p>This should open up a address bar where you can enter a URL.
+Alternatively, look for the "connect to server" option in your file
+managers menu.</p>
+<p>Enter: <strong><code>sftp://vsc40000@login.hpc.ugent.be/</code></strong> and press enter.</p>
+<p>You should now be able to browse files on the HPC in your file browser.</p>
+<h3 id="using-scp">Using scp<a class="headerlink" href="#using-scp" title="Permanent link">&para;</a></h3>
+<p><strong>Secure copy</strong> or <strong>SCP</strong> is a tool (command) for securely transferring files
+between a local host (= your computer) and a remote host (the HPC). It is
+based on the Secure Shell (SSH) protocol. The <strong>scp</strong> command is the equivalent
+of the <strong>cp</strong> (i.e., <strong>c</strong>o<strong>p</strong>y) command, but can copy files to or from
+remote machines.</p>
+<p>It's easier to copy files directly to <code>$VSC_DATA</code> and <code>$VSC_SCRATCH</code> if you
+have <strong>symlinks</strong> to them in your home directory.<br />
+See <a href="/linux-tutorial/uploading_files/#symlinks-for-datascratch">symlinks</a> on
+how to create symlinks.</p>
+<p>Open an additional terminal window and check that you're working on your
+local machine. The command hostname should give you the name of <strong>your</strong> pc.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-11-1"><a id="__codelineno-11-1" name="__codelineno-11-1" href="#__codelineno-11-1"></a>$<span class="w"> </span>hostname
+</span><span id="__span-11-2"><a id="__codelineno-11-2" name="__codelineno-11-2" href="#__codelineno-11-2"></a>&lt;local-machine-name&gt;
+</span></code></pre></div>
+<p>If you're still using the terminal that is connected to the HPC, close the
+connection by typing "exit" in the terminal window.</p>
+<h4 id="example-copy-a-file-to-the-hpc-cluster">Example: copy a file to the hpc cluster<a class="headerlink" href="#example-copy-a-file-to-the-hpc-cluster" title="Permanent link">&para;</a></h4>
+<p>We will copy the (local) file "<em>localfile.txt</em>" from your pc to your
+home directory on the (remote) HPC cluster.</p>
+<p>Note the <strong>#</strong>-signs are used to indicate comments, you do not need to type the
+comments.</p>
+<p>First we generate a small dummy file "<em>localfile.txt</em>", which contains the word
+"Hello". To create this file we use the tool "echo", which shows some text on
+the screen. We can redirect the output of a command to a file with the <strong>&gt;</strong>-symbol.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-12-1"><a id="__codelineno-12-1" name="__codelineno-12-1" href="#__codelineno-12-1"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="w">  </span><span class="c1"># show the word Hello on the screen</span>
+</span><span id="__span-12-2"><a id="__codelineno-12-2" name="__codelineno-12-2" href="#__codelineno-12-2"></a>Hello
+</span><span id="__span-12-3"><a id="__codelineno-12-3" name="__codelineno-12-3" href="#__codelineno-12-3"></a>$<span class="w"> </span><span class="nb">echo</span><span class="w"> </span><span class="s2">&quot;Hello&quot;</span><span class="w"> </span>&gt;<span class="w"> </span>localfile.txt<span class="w"> </span><span class="c1"># create the file</span>
+</span><span id="__span-12-4"><a id="__codelineno-12-4" name="__codelineno-12-4" href="#__codelineno-12-4"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w">                        </span><span class="c1"># verify if the file exists</span>
+</span><span id="__span-12-5"><a id="__codelineno-12-5" name="__codelineno-12-5" href="#__codelineno-12-5"></a>...
+</span><span id="__span-12-6"><a id="__codelineno-12-6" name="__codelineno-12-6" href="#__codelineno-12-6"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w">  </span>staff<span class="w">   </span><span class="m">6</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">09</span>:37<span class="w"> </span>localfile.txt
+</span><span id="__span-12-7"><a id="__codelineno-12-7" name="__codelineno-12-7" href="#__codelineno-12-7"></a>$<span class="w"> </span>cat<span class="w"> </span>localfile.txt<span class="w"> </span><span class="c1"># verify the contents of the file</span>
+</span><span id="__span-12-8"><a id="__codelineno-12-8" name="__codelineno-12-8" href="#__codelineno-12-8"></a>Hello
+</span></code></pre></div>
+<p>Use your own VSC account, which is something like "vsc40000".</p>
+<p>Don't forget the colon (<strong>:</strong>) at the end. If you forget it, it will just
+create a file named <a href="&#109;&#97;&#105;&#108;&#116;&#111;&#58;&#118;&#115;&#99;&#52;&#48;&#48;&#48;&#48;&#64;&#108;&#111;&#103;&#105;&#110;&#46;&#104;&#112;&#99;&#46;&#117;&#103;&#101;&#110;&#116;&#46;&#98;&#101;">&#118;&#115;&#99;&#52;&#48;&#48;&#48;&#48;&#64;&#108;&#111;&#103;&#105;&#110;&#46;&#104;&#112;&#99;&#46;&#117;&#103;&#101;&#110;&#116;&#46;&#98;&#101;</a> on your local filesystem. You
+can even specify where to save the file on the remote filesystem by putting a
+path after the colon.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-13-1"><a id="__codelineno-13-1" name="__codelineno-13-1" href="#__codelineno-13-1"></a>$<span class="w"> </span>scp<span class="w"> </span>localfile.txt<span class="w"> </span>vsc40000@login.hpc.ugent.be:
+</span><span id="__span-13-2"><a id="__codelineno-13-2" name="__codelineno-13-2" href="#__codelineno-13-2"></a>localfile.txt<span class="w">     </span><span class="m">100</span>%<span class="w">   </span><span class="m">6</span><span class="w">     </span><span class="m">0</span>.0KB/s<span class="w">     </span><span class="m">00</span>:00
+</span></code></pre></div>
+<p>Connect to the HPC via another terminal, print the working directory (to
+make sure you're in the home directory) and check whether the file has
+arrived:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-14-1"><a id="__codelineno-14-1" name="__codelineno-14-1" href="#__codelineno-14-1"></a>$<span class="w"> </span><span class="nb">pwd</span>
+</span><span id="__span-14-2"><a id="__codelineno-14-2" name="__codelineno-14-2" href="#__codelineno-14-2"></a>/user/home/gent/vsc400/vsc40000
+</span><span id="__span-14-3"><a id="__codelineno-14-3" name="__codelineno-14-3" href="#__codelineno-14-3"></a>$<span class="w"> </span>ls<span class="w"> </span>-l<span class="w"> </span>
+</span><span id="__span-14-4"><a id="__codelineno-14-4" name="__codelineno-14-4" href="#__codelineno-14-4"></a>total<span class="w"> </span><span class="m">1536</span>
+</span><span id="__span-14-5"><a id="__codelineno-14-5" name="__codelineno-14-5" href="#__codelineno-14-5"></a>drwxrwxr-x<span class="w"> </span><span class="m">2</span>
+</span><span id="__span-14-6"><a id="__codelineno-14-6" name="__codelineno-14-6" href="#__codelineno-14-6"></a>drwxrwxr-x<span class="w"> </span><span class="m">2</span>
+</span><span id="__span-14-7"><a id="__codelineno-14-7" name="__codelineno-14-7" href="#__codelineno-14-7"></a>drwxrwxr-x<span class="w"> </span><span class="m">10</span>
+</span><span id="__span-14-8"><a id="__codelineno-14-8" name="__codelineno-14-8" href="#__codelineno-14-8"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span>
+</span><span id="__span-14-9"><a id="__codelineno-14-9" name="__codelineno-14-9" href="#__codelineno-14-9"></a>$<span class="w"> </span>cat<span class="w"> </span>localfile.txt
+</span><span id="__span-14-10"><a id="__codelineno-14-10" name="__codelineno-14-10" href="#__codelineno-14-10"></a>Hello
+</span></code></pre></div>
+<p>The <strong>scp</strong> command can also be used to copy files from the cluster to your
+local machine. Let us copy the remote file "intro-HPC.pdf" from your "docs"
+subdirectory on the cluster to your local computer.</p>
+<p>First, we will confirm that the file is indeed in the "docs" subdirectory. In
+the terminal on the login node, enter:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-15-1"><a id="__codelineno-15-1" name="__codelineno-15-1" href="#__codelineno-15-1"></a>$<span class="w"> </span><span class="nb">cd</span><span class="w"> </span>~/docs
+</span><span id="__span-15-2"><a id="__codelineno-15-2" name="__codelineno-15-2" href="#__codelineno-15-2"></a>$<span class="w"> </span>ls<span class="w"> </span>-l
+</span><span id="__span-15-3"><a id="__codelineno-15-3" name="__codelineno-15-3" href="#__codelineno-15-3"></a>total<span class="w"> </span><span class="m">1536</span>
+</span><span id="__span-15-4"><a id="__codelineno-15-4" name="__codelineno-15-4" href="#__codelineno-15-4"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>vsc40000<span class="w"> </span>Sep<span class="w"> </span><span class="m">11</span><span class="w"> </span><span class="m">09</span>:53<span class="w"> </span>intro-HPC.pdf
+</span></code></pre></div>
+<p>Now we will copy the file to the local machine. On the terminal on your
+own local computer, enter:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-16-1"><a id="__codelineno-16-1" name="__codelineno-16-1" href="#__codelineno-16-1"></a>$<span class="w"> </span>scp<span class="w"> </span>vsc40000@login.hpc.ugent.be:./docs/intro-HPC.pdf<span class="w"> </span>.
+</span><span id="__span-16-2"><a id="__codelineno-16-2" name="__codelineno-16-2" href="#__codelineno-16-2"></a>intro-HPC.pdf<span class="w"> </span><span class="m">100</span>%<span class="w"> </span>725KB<span class="w"> </span><span class="m">724</span>.6KB/s<span class="w"> </span><span class="m">00</span>:01
+</span><span id="__span-16-3"><a id="__codelineno-16-3" name="__codelineno-16-3" href="#__codelineno-16-3"></a>$<span class="w"> </span>ls<span class="w"> </span>-l
+</span><span id="__span-16-4"><a id="__codelineno-16-4" name="__codelineno-16-4" href="#__codelineno-16-4"></a>total<span class="w"> </span><span class="m">899</span>
+</span><span id="__span-16-5"><a id="__codelineno-16-5" name="__codelineno-16-5" href="#__codelineno-16-5"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>staff<span class="w"> </span><span class="m">741995</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">09</span>:53
+</span><span id="__span-16-6"><a id="__codelineno-16-6" name="__codelineno-16-6" href="#__codelineno-16-6"></a>-rw-r--r--<span class="w"> </span><span class="m">1</span><span class="w"> </span>user<span class="w"> </span>staff<span class="w">      </span><span class="m">6</span><span class="w"> </span>Sep<span class="w"> </span><span class="m">18</span><span class="w"> </span><span class="m">09</span>:37<span class="w"> </span>localfile.txt
+</span></code></pre></div>
+<p>The file has been copied from the HPC to your local computer.</p>
+<p>It's also possible to copy entire directories (and their contents) with
+the <code>-r</code> flag. For example, if we want to copy the local directory
+<code>dataset</code> to <code>$VSC_SCRATCH</code>, we can use the following command (assuming
+you've created the <code>scratch</code> symlink):</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-17-1"><a id="__codelineno-17-1" name="__codelineno-17-1" href="#__codelineno-17-1"></a>scp<span class="w"> </span>-r<span class="w"> </span>dataset<span class="w"> </span>vsc40000@login.hpc.ugent.be:scratch
+</span></code></pre></div>
+<p>If you don't use the <code>-r</code> option to copy a directory, you will run into
+the following error:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-18-1"><a id="__codelineno-18-1" name="__codelineno-18-1" href="#__codelineno-18-1"></a>$<span class="w"> </span>scp<span class="w"> </span>dataset<span class="w"> </span>vsc40000@login.hpc.ugent.be:scratch
+</span><span id="__span-18-2"><a id="__codelineno-18-2" name="__codelineno-18-2" href="#__codelineno-18-2"></a>dataset:<span class="w"> </span>not<span class="w"> </span>a<span class="w"> </span>regular<span class="w"> </span>file
+</span></code></pre></div>
+<h3 id="using-sftp">Using sftp<a class="headerlink" href="#using-sftp" title="Permanent link">&para;</a></h3>
+<p>The <strong>SSH File Transfer Protocol</strong> (also <strong>Secure File Transfer Protocol</strong>, or
+<strong>SFTP</strong>) is a network protocol that provides file access, file transfer and
+file management functionalities over any reliable data stream.
+Compared to scp the sftp tool provides a more interactive way of doing file transfers.</p>
+<p>One easy way of starting a sftp session is</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-19-1"><a id="__codelineno-19-1" name="__codelineno-19-1" href="#__codelineno-19-1"></a>sftp<span class="w"> </span>vsc40000@login.hpc.ugent.be
+</span></code></pre></div>
+<p>After the sftp program is started you get a prompt and you can issue commands.</p>
+<p>Typical and popular commands inside an sftp session are:</p>
+<table>
+<thead>
+<tr>
+<th style="text-align: left;">Command</th>
+<th style="text-align: left;">What the command does</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: left;"><strong>?</strong></td>
+<td style="text-align: left;">Show a list of commands</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>bye</strong></td>
+<td style="text-align: left;">Quit the sftp session</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>ls</strong></td>
+<td style="text-align: left;">Get a list of the files in the current directory on the HPC.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>lls</strong></td>
+<td style="text-align: left;">Get <strong>l</strong>ocal directory listing (i.e. on your computer).</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>cd ~/exmples/fibo</strong></td>
+<td style="text-align: left;">Move to the examples/fibo subdirectory on the remote machine (i.e., the HPC)</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>get fibo.py</strong></td>
+<td style="text-align: left;">Copy the file "fibo.py" from the HPC to your computer</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>get tutorial/HPC.pdf</strong></td>
+<td style="text-align: left;">Copy the file "HPC.pdf" from the HPC, which is in the "tutorial" subdirectory.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>lcd test</strong></td>
+<td style="text-align: left;">Move to the "test" subdirectory on your <strong>l</strong>ocal machine.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>lcd ..</strong></td>
+<td style="text-align: left;">Move up one level in the <strong>l</strong>ocal directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>put test.py</strong></td>
+<td style="text-align: left;">Copy the local file test.py to the HPC.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>put test1.py test2.py</strong></td>
+<td style="text-align: left;">Copy the local file test1.py to the and rename it to test2.py.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>mget *.cc</strong></td>
+<td style="text-align: left;">Copy all the remote files with extension ".cc" to the local directory.</td>
+</tr>
+<tr>
+<td style="text-align: left;"><strong>mput *.h</strong></td>
+<td style="text-align: left;">Copy all the local files with extension ".h" to the HPC.</td>
+</tr>
+</tbody>
+</table>
+<h3 id="fast-file-transfer-for-large-datasets">Fast file transfer for large datasets<a class="headerlink" href="#fast-file-transfer-for-large-datasets" title="Permanent link">&para;</a></h3>
+<p>$$$ rsync can resume jobs
+$$$ filesender??
+See <a href="../../linux-tutorial/uploading_files/#copying-faster-with-rsync">the section on <code>rsync</code> in the Linux
+intro</a>.</p>
+<h2 id="changing-login-nodes">Changing login nodes<a class="headerlink" href="#changing-login-nodes" title="Permanent link">&para;</a></h2>
+<p>It can be useful to have control over which login node you are on.</p>
+<p>However, when you connect to the HPC (High-Performance Computing) system, you
+are directed to a <em>random</em> login node, which might not be the one where you
+already have an active session. To address this, there is a way to manually
+switch your active login node.</p>
+<p>For instance, if you want to switch to the login node named <code>gligar09.gastly.os</code>,
+you can use the following command while you are connected to the
+<code>gligar10.gastly.os</code> login node on the HPC:</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-20-1"><a id="__codelineno-20-1" name="__codelineno-20-1" href="#__codelineno-20-1"></a>ssh<span class="w"> </span>gligar09.gastly.os
+</span></code></pre></div>
+<p>This is also possible the other way around.</p>
+<p>If you want to find out which login host you are connected to, you can use the
+<code>hostname</code> command.</p>
+<div class="language-bash highlight"><pre><span></span><code><span id="__span-21-1"><a id="__codelineno-21-1" name="__codelineno-21-1" href="#__codelineno-21-1"></a>$<span class="w"> </span>hostname
+</span><span id="__span-21-2"><a id="__codelineno-21-2" name="__codelineno-21-2" href="#__codelineno-21-2"></a>gligar09.gastly.os
+</span><span id="__span-21-3"><a id="__codelineno-21-3" name="__codelineno-21-3" href="#__codelineno-21-3"></a>$<span class="w"> </span>ssh<span class="w"> </span>gligar10.gastly.os
+</span><span id="__span-21-4"><a id="__codelineno-21-4" name="__codelineno-21-4" href="#__codelineno-21-4"></a>
+</span><span id="__span-21-5"><a id="__codelineno-21-5" name="__codelineno-21-5" href="#__codelineno-21-5"></a>$<span class="w"> </span>hostname
+</span><span id="__span-21-6"><a id="__codelineno-21-6" name="__codelineno-21-6" href="#__codelineno-21-6"></a>gligar10.gastly.os
+</span></code></pre></div>
+<p>Rather than always starting a new session on the HPC, you can also use a
+terminal multiplexer like <code>screen</code> or <code>tmux</code>.
+These can make sessions that 'survives' across disconnects.</p>
+<p>You can find more information on how to use these tools here (or on other
+online sources):</p>
+<ul>
+<li><a href="https://www.howtogeek.com/662422/how-to-use-linuxs-screen-command/">screen</a></li>
+<li><a href="https://www.howtogeek.com/671422/how-to-use-tmux-on-linux-and-why-its-better-than-screen/">tmux</a></li>
+</ul>
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+  <script>var tabs=__md_get("__tabs");if(Array.isArray(tabs))e:for(var set of document.querySelectorAll(".tabbed-set")){var labels=set.querySelector(".tabbed-labels");for(var tab of tabs)for(var label of labels.getElementsByTagName("label"))if(label.innerText.trim()===tab){var input=document.getElementById(label.htmlFor);input.checked=!0;continue e}}</script>
+
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" fill="none" stroke="currentColor" stroke-linecap="round" stroke-linejoin="round" stroke-width="2" class="lucide lucide-circle-arrow-up" viewBox="0 0 24 24"><circle cx="12" cy="12" r="10"/><path d="m16 12-4-4-4 4M12 16V8"/></svg>
+  Back to top
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; 2026 The authors of this site
+and maybe some others too ...
+
+    </div>
+  
+  
+    Made with
+    <a href="https://zensical.org/" target="_blank" rel="noopener">
+      Zensical
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+    
+      
+      
+      <script id="__config" type="application/json">{"annotate":null,"base":"..","features":["announce.dismiss","content.action.edit","content.code.annotate","content.code.copy","content.code.select","content.footnote.tooltips","content.tabs.link","content.tooltips","navigation.footer","navigation.indexes","navigation.instant","navigation.instant.prefetch","navigation.path","navigation.sections","navigation.top","navigation.tracking","search.highlight"],"search":"../assets/javascripts/workers/search.e2d2d235.min.js","tags":null,"translations":{"clipboard.copied":"Copied to clipboard","clipboard.copy":"Copy to clipboard","search.result.more.one":"1 more on this page","search.result.more.other":"# more on this page","search.result.none":"No matching documents","search.result.one":"1 matching document","search.result.other":"# matching documents","search.result.placeholder":"Type to start searching","search.result.term.missing":"Missing","select.version":"Select version"},"version":null}</script>
+    
+    
+      <script src="../assets/javascripts/bundle.63456bd9.min.js"></script>
+      
+    
+  </body>
+</html>
