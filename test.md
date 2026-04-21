@@ -38,7 +38,7 @@ you can connect to the VSC HPC infrastructure.
 
 VSC login nodes are only directly accessible from within university
 networks, and from (most) Belgian commercial internet providers.
-$$$ ook eduroam?
+FIXME ook eduroam?
 
 All other IP domains are blocked by default. If you are connecting from
 an IP address that is not allowed direct access, you have the following
@@ -70,7 +70,7 @@ ssh_exchange_identification: read: Connection reset by peer
 
 ## First Time connection to the HPC infrastructure
 
-The remaining content in this text is primarily focused for people utilizing
+The remaining content in this text is primarily focused for people using
 a terminal with SSH.
 
 If you want to use the web portal, read following page:
@@ -106,7 +106,7 @@ Please check ["Warning message when first connecting to new
 host"](../troubleshooting/#warning-message-when-first-connecting-to-new-host) on
 how to handle this.
 
-$$$ dit hoort in troubleshootig doc
+FIXME dit hoort in troubleshooting doc
 A possible error message you can get if you previously saved your
 private key somewhere else than the default location
 (`$HOME/.ssh/id_rsa`):
