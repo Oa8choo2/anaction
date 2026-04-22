@@ -127,7 +127,7 @@ jobs:
           git remote -v
           git add --verbose .
           # git add --verbose 'zdocs/docs/connecting.md'
-          git commit -m 'adding everything'
+          git commit -m 'adding everything' --all
           git push --verbose
           git status
           ls -alrt
