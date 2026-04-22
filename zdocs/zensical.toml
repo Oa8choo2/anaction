@@ -74,6 +74,7 @@ repo_url = "https://github.com/Oa8choo2/anaction"
 # edit_uri = edit/master/{docs_dir} -- seems hardcoded
 # https://raw.githubusercontent.com/Oa8choo2/anaction/refs/heads/main/zdocs/docs/about.md
 # https://github.com/Oa8choo2/anaction/edit/main/zdocs/docs/about.md
+# in some way this uri is also used for the show source option
 edit_uri = "edit/main/zdocs/docs"
 
 # ----------------------------------------------------------------------------
@@ -165,14 +166,15 @@ features = [
     # https://zensical.org/docs/authoring/content-tabs/#linked-content-tabs
     "content.tabs.link",
 
-    # TODO: not sure I understand this one? Is there a demo of this in the docs?
+    # With this feature enabled users can add tooltips to links that will be
+    # displayed when the mouse pointer hovers the link.
     # https://zensical.org/docs/authoring/tooltips/#improved-tooltips
     "content.tooltips",
 
     # With this feature enabled, Zensical will automatically hide parts
     # of the header when the user scrolls past a certain point.
     # https://zensical.org/docs/setup/header/#automatic-hiding
-    # "header.autohide",
+    "header.autohide",
 
     # Turn on this feature to expand all collapsible sections in the
     # navigation sidebar by default.
@@ -249,7 +251,7 @@ features = [
     # When anchor following for the table of contents is enabled, the sidebar
     # is automatically scrolled so that the active anchor is always visible.
     # https://zensical.org/docs/setup/navigation/#anchor-following
-    # "toc.follow",
+    "toc.follow",
 
     # When navigation integration for the table of contents is enabled, it is
     # always rendered as part of the navigation sidebar on the left.
@@ -258,8 +260,37 @@ features = [
 ]
 
 # ----------------------------------------------------------------------------
+# You can configure your own logo to be shown in the header using the "logo"
+# option in the "theme" subsection. The logo must be a relative path to a file
+# in your "docs_dir", e.g., to use `docs/assets/logo.png` you would set:
+# ----------------------------------------------------------------------------
+#logo = "assets/logo.png"
+
+# ----------------------------------------------------------------------------
+# If you don't have a dedicated project logo, you can use a built-in icon from
+# the icon sets shipped in Zensical. Please note that the setting lives in a
+# different subsection, and that the above take precedence over the icon.
+#
+# Read more:
+# - https://zensical.org/docs/setup/logo-and-icons
+# - https://github.com/zensical/ui/tree/master/dist/.icons
+# ----------------------------------------------------------------------------
+#[project.theme.icon]
+#logo = "lucide/smile"
+
+# ----------------------------------------------------------------------------
+# In the "font" subsection you can configure the fonts used. By default, fonts
+# are loaded from Google Fonts, giving you a wide range of choices from a set
+# of suitably licensed fonts. There are options for a normal text font and for
+# a monospaced font used in code blocks.
+# ----------------------------------------------------------------------------
+#[project.theme.font]
+#text = "Inter"
+#code = "Jetbrains Mono"
+
+# ----------------------------------------------------------------------------
 # In the "palette" subsection you can configure options for the color scheme.
-# You can configure different color # schemes, e.g., to turn on dark mode,
+# You can configure different color schemes, e.g., to turn on dark mode,
 # that the user can switch between. Each color scheme can be further
 # customized.
 #
@@ -277,35 +308,6 @@ toggle.icon = "lucide/moon"
 toggle.name = "Switch to light mode"
 
 # ----------------------------------------------------------------------------
-# In the "font" subsection you can configure the fonts used. By default, fonts
-# are loaded from Google Fonts, giving you a wide range of choices from a set
-# of suitably licensed fonts. There are options for a normal text font and for
-# a monospaced font used in code blocks.
-# ----------------------------------------------------------------------------
-#[project.theme.font]
-#text = "Inter"
-#code = "Jetbrains Mono"
-
-# ----------------------------------------------------------------------------
-# You can configure your own logo to be shown in the header using the "logo"
-# option in the "icons" subsection. The logo can be a path to a file in your
-# "docs_dir" or it can be a path to an icon.
-#
-# Likewise, you can customize the logo used for the repository section of the
-# header. Zensical derives the default logo for this from the repository URL.
-# See below...
-#
-# There are other icons you can customize. See the documentation for details.
-#
-# Read more:
-# - https://zensical.org/docs/setup/logo-and-icons
-# - https://zensical.org/docs/authoring/icons-emojis/#search
-# ----------------------------------------------------------------------------
-#[project.theme.icon]
-#logo = "lucide/smile"
-#repo = "lucide/smile"
-
-# ----------------------------------------------------------------------------
 # The "extra" section contains miscellaneous settings.
 # ----------------------------------------------------------------------------
 #[[project.extra.social]]
@@ -313,4 +315,46 @@ toggle.name = "Switch to light mode"
 #link = "https://github.com/user/repo"
 link = "https://github.com/hpcugent/vsc_user_docs"
 
-
+# ----------------------------------------------------------------------------
+# In this section you can configure the Markdown extensions that are used when
+# rendering your documentation. We enable the most useful extensions by default,
+# but you can customize this list to your needs.
+#
+# Read more:
+# - https://zensical.org/docs/setup/extensions/
+# ----------------------------------------------------------------------------
+[project.markdown_extensions.abbr]
+[project.markdown_extensions.admonition]
+[project.markdown_extensions.attr_list]
+[project.markdown_extensions.def_list]
+[project.markdown_extensions.footnotes]
+[project.markdown_extensions.md_in_html]
+[project.markdown_extensions.toc]
+permalink = true
+[project.markdown_extensions.pymdownx.arithmatex]
+generic = true
+[project.markdown_extensions.pymdownx.betterem]
+[project.markdown_extensions.pymdownx.caret]
+[project.markdown_extensions.pymdownx.details]
+[project.markdown_extensions.pymdownx.emoji]
+emoji_generator = "zensical.extensions.emoji.to_svg"
+emoji_index = "zensical.extensions.emoji.twemoji"
+[project.markdown_extensions.pymdownx.highlight]
+anchor_linenums = true
+line_spans = "__span"
+pygments_lang_class = true
+[project.markdown_extensions.pymdownx.inlinehilite]
+[project.markdown_extensions.pymdownx.keys]
+[project.markdown_extensions.pymdownx.magiclink]
+[project.markdown_extensions.pymdownx.mark]
+[project.markdown_extensions.pymdownx.smartsymbols]
+[project.markdown_extensions.pymdownx.superfences]
+custom_fences = [
+  { name = "mermaid", class = "mermaid", format = "pymdownx.superfences.fence_code_format" }
+]
+[project.markdown_extensions.pymdownx.tabbed]
+alternate_style = true
+combine_header_slug = true
+[project.markdown_extensions.pymdownx.tasklist]
+custom_checkbox = true
+[project.markdown_extensions.pymdownx.tilde]
