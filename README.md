@@ -2,6 +2,8 @@
 
 test a github action
 
+[![pages-build-deployment](https://github.com/Oa8choo2/anaction/actions/workflows/pages/pages-build-deployment/badge.svg)](https://github.com/Oa8choo2/anaction/actions/workflows/pages/pages-build-deployment)
+
 ## steps
 
 * mkdocs/docs/HPC -> original md files
