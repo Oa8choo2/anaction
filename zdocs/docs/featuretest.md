@@ -6,7 +6,13 @@ description: |
 
 # Zensical featuretest
 
-See <https://zensical.org/docs/setup/extensions/> 
+See <https://zensical.org/docs/setup/extensions/>. 
+
+The enabled extensions are visible in the
+<https://oa8choo2.github.io/anaction/zdocs/site/zensical.toml/>
+
+An overview of other extensions is at
+<https://github.com/commonmark/commonmark-spec/wiki/Deployed-Extensions>
 
 ## Tabbed
 
@@ -79,3 +85,13 @@ use an online tools such as
 * <https://yaytext.com/strike/> 
 * <https://yaytext.com/tiny-text/>
 * <https://jwilk.github.io/chemiscripts/>
+
+## Caret `^`
+
+Caret is an accent circonflex in English.' 
+
+Superscript can be done with ^superscript^ (generates `<sup>`-tag)
+
+To create  `<ins>`-tag use double carets: ^^inserted^^   
+
+
