@@ -122,6 +122,7 @@ jobs:
       - name: Check git
         run: | 
           # configure Git
+          git config --global init.defaultBranch main
           git config user.email "${{github.event.pusher.email}}"
           git config user.name "${{github.event.pusher.name}}"
           set -xv
