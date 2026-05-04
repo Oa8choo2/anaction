@@ -1,3 +1,7 @@
-# Zensical version
+# Zensical version 0.0.39
+
 /home/runner/work/anaction/anaction/.venv/bin/zensical
-0.0.37
+
+
+<https://github.com/zensical/zensical/releases/tag/v0.0.39>
+

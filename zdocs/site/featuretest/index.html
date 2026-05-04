@@ -24,7 +24,7 @@
       
       
       <link rel="icon" href="../assets/images/favicon.png">
-      <meta name="generator" content="zensical-0.0.37">
+      <meta name="generator" content="zensical-0.0.39">
     
     
       
@@ -413,6 +413,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#caret" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Caret <code>^</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -489,7 +500,7 @@
   <span class="md-ellipsis">
     
   
-    Zensical version
+    Zensical version 0.0.39
   
 
     
@@ -575,6 +586,17 @@
   
 </li>
       
+        <li class="md-nav__item">
+  <a href="#caret" class="md-nav__link">
+    <span class="md-ellipsis">
+      <span class="md-typeset">
+        Caret <code>^</code>
+      </span>
+    </span>
+  </a>
+  
+</li>
+      
     </ul>
   
 </nav>
@@ -613,11 +635,46 @@
 
 
 <h1 id="zensical-featuretest">Zensical featuretest<a class="headerlink" href="#zensical-featuretest" title="Permanent link">&para;</a></h1>
-<p>See <a href="https://zensical.org/docs/setup/extensions/">https://zensical.org/docs/setup/extensions/</a> </p>
+<p>See <a href="https://zensical.org/docs/setup/extensions/">https://zensical.org/docs/setup/extensions/</a>. </p>
+<p>The enabled extensions are visible in the
+<a href="https://oa8choo2.github.io/anaction/zdocs/site/zensical.toml/">https://oa8choo2.github.io/anaction/zdocs/site/zensical.toml/</a></p>
+<p>An overview of other extensions is at
+<a href="https://github.com/commonmark/commonmark-spec/wiki/Deployed-Extensions">https://github.com/commonmark/commonmark-spec/wiki/Deployed-Extensions</a></p>
 <h2 id="tabbed">Tabbed<a class="headerlink" href="#tabbed" title="Permanent link">&para;</a></h2>
 <p>Documentation:</p>
 <p><a href="https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/">https://facelessuser.github.io/pymdown-extensions/extensions/tabbed/</a></p>
 <p>Example:</p>
+<div class="tabbed-set tabbed-alternate" data-tabs="1:2"><input checked="checked" id="__tabbed_1_1" name="__tabbed_1" type="radio" /><input id="__tabbed_1_2" name="__tabbed_1" type="radio" /><div class="tabbed-labels"><label for="__tabbed_1_1">Tab 1</label><label for="__tabbed_1_2">Tab 2</label></div>
+<div class="tabbed-content">
+<div class="tabbed-block">
+<p>Markdown <strong>content</strong>.</p>
+<p>Multiple paragraphs.</p>
+</div>
+<div class="tabbed-block">
+<p>More Markdown <strong>content</strong>.</p>
+<ul>
+<li>list item a</li>
+<li>list item b</li>
+</ul>
+</div>
+</div>
+</div>
+<p>Code:</p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>=== &quot;Tab 1&quot;
+</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>    Markdown **content**.
+</span><span id="__span-0-3"><a id="__codelineno-0-3" name="__codelineno-0-3" href="#__codelineno-0-3"></a>
+</span><span id="__span-0-4"><a id="__codelineno-0-4" name="__codelineno-0-4" href="#__codelineno-0-4"></a>    Multiple paragraphs.
+</span><span id="__span-0-5"><a id="__codelineno-0-5" name="__codelineno-0-5" href="#__codelineno-0-5"></a>
+</span><span id="__span-0-6"><a id="__codelineno-0-6" name="__codelineno-0-6" href="#__codelineno-0-6"></a>=== &quot;Tab 2&quot;
+</span><span id="__span-0-7"><a id="__codelineno-0-7" name="__codelineno-0-7" href="#__codelineno-0-7"></a>    More Markdown **content**.
+</span><span id="__span-0-8"><a id="__codelineno-0-8" name="__codelineno-0-8" href="#__codelineno-0-8"></a>
+</span><span id="__span-0-9"><a id="__codelineno-0-9" name="__codelineno-0-9" href="#__codelineno-0-9"></a>    - list item a
+</span><span id="__span-0-10"><a id="__codelineno-0-10" name="__codelineno-0-10" href="#__codelineno-0-10"></a>    - list item b
+</span></code></pre></div>
+<p>Alternative:</p>
+<p>Seems not to work, April 28, 2026</p>
+<p>The new pymdownx.blocks.tab extension is meant to replace pymdownx.tabbed
+<a href="https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/tab/">https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/tab/</a></p>
 <p>/// tab | Tab 1 title
 Tab 1 content
 ///</p>
@@ -628,11 +685,23 @@ Tab 2 content
 <p>Documentation:</p>
 <p><a href="https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/">https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/</a></p>
 <p>Example:</p>
-<p>[ ] A taks that needs to be done<br />
-[x] A task that is done</p>
+<p>You <strong>need a normal list</strong> and square brackets after the list-item symbol.</p>
+<ul class="task-list">
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled/><span class="task-list-indicator"></span></label> A taks that needs to be done  </li>
+<li class="task-list-item"><label class="task-list-control"><input type="checkbox" disabled checked/><span class="task-list-indicator"></span></label> A task that is done</li>
+</ul>
 <p>Code</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-0-1"><a id="__codelineno-0-1" name="__codelineno-0-1" href="#__codelineno-0-1"></a>[ ] A taks that needs to be done
-</span><span id="__span-0-2"><a id="__codelineno-0-2" name="__codelineno-0-2" href="#__codelineno-0-2"></a>[x] A task that is done
+<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>- [ ] A taks that needs to be done
+</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>- [x] A task that is done
+</span></code></pre></div>
+<p>Unicode</p>
+<ul>
+<li>checked ☒</li>
+<li>not checked ☐</li>
+</ul>
+<p>Emoji shortcode equivalent</p>
+<p><img alt="✅" class="twemoji" src="https://cdn.jsdelivr.net/gh/jdecked/twemoji@16.0.1/assets/svg/2705.svg" title=":white_check_mark:" /></p>
+<div class="language-text highlight"><pre><span></span><code><span id="__span-2-1"><a id="__codelineno-2-1" name="__codelineno-2-1" href="#__codelineno-2-1"></a>:white_check_mark:
 </span></code></pre></div>
 <h2 id="tilde-delete-and-subscript">Tilde -&gt; delete and subscript<a class="headerlink" href="#tilde-delete-and-subscript" title="Permanent link">&para;</a></h2>
 <p>Tilde optionally adds two different features which are syntactically built
@@ -647,8 +716,8 @@ around the ~ character: </p>
 <p>Next word should be 'deleted': <del>deleted</del>.</p>
 <p>Hydroxycitronellal can be written as C<sub>10</sub>H<sub>20</sub>O<sub>2</sub></p>
 <p>Use this code:</p>
-<div class="language-text highlight"><pre><span></span><code><span id="__span-1-1"><a id="__codelineno-1-1" name="__codelineno-1-1" href="#__codelineno-1-1"></a>~~deleted~~ double tildes
-</span><span id="__span-1-2"><a id="__codelineno-1-2" name="__codelineno-1-2" href="#__codelineno-1-2"></a>C~10~H~20~O~2~ single tildes
+<div class="language-text highlight"><pre><span></span><code><span id="__span-3-1"><a id="__codelineno-3-1" name="__codelineno-3-1" href="#__codelineno-3-1"></a>~~deleted~~ double tildes
+</span><span id="__span-3-2"><a id="__codelineno-3-2" name="__codelineno-3-2" href="#__codelineno-3-2"></a>C~10~H~20~O~2~ single tildes
 </span></code></pre></div>
 <p>Note: similar effect can be obtained by using Unicode</p>
 <ul>
@@ -662,6 +731,10 @@ use an online tools such as </p>
 <li><a href="https://yaytext.com/tiny-text/">https://yaytext.com/tiny-text/</a></li>
 <li><a href="https://jwilk.github.io/chemiscripts/">https://jwilk.github.io/chemiscripts/</a></li>
 </ul>
+<h2 id="caret">Caret <code>^</code><a class="headerlink" href="#caret" title="Permanent link">&para;</a></h2>
+<p>Caret is an accent circonflex in English.' </p>
+<p>Superscript can be done with <sup>superscript</sup> (generates <code>&lt;sup&gt;</code>-tag)</p>
+<p>To create  <code>&lt;ins&gt;</code>-tag use double carets: <ins>inserted</ins>   </p>
 
 
 
