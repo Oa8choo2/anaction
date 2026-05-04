@@ -106,10 +106,11 @@ jobs:
           find $HOME -type f -name zensical -ls
           export PATH=$GITHUB_WORKSPACE/.venv/bin:$PATH
           echo $PATH | tr \: \\n
-          echo "# Zensical version" > zdocs/docs/zensicalversion.md
+          zv=$(zensical --version)
+          echo -e "# Zensical version $zv\n" > zdocs/docs/zensicalversion.md
           which -a zensical >> zdocs/docs/zensicalversion.md
-          zensical --version >> zdocs/docs/zensicalversion.md
-
+          echo -e "\n\n<https://github.com/zensical/zensical/releases/tag/v$zv>\n" \
+            >> zdocs/docs/zensicalversion.md
       # run zensical debug with python -duv 
       - name: Build the site
         run: |

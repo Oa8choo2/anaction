@@ -22,6 +22,39 @@ Documentation:
 
 Example:
 
+=== "Tab 1"
+    Markdown **content**.
+
+    Multiple paragraphs.
+
+=== "Tab 2"
+    More Markdown **content**.
+
+    - list item a
+    - list item b
+
+Code:
+
+```text
+=== "Tab 1"
+    Markdown **content**.
+
+    Multiple paragraphs.
+
+=== "Tab 2"
+    More Markdown **content**.
+
+    - list item a
+    - list item b
+```
+
+Alternative:
+
+Seems not to work, April 28, 2026
+
+The new pymdownx.blocks.tab extension is meant to replace pymdownx.tabbed
+<https://facelessuser.github.io/pymdown-extensions/extensions/blocks/plugins/tab/>
+
 /// tab | Tab 1 title
 Tab 1 content
 ///
@@ -37,15 +70,30 @@ Documentation:
 <https://facelessuser.github.io/pymdown-extensions/extensions/tasklist/>
 
 Example:
-
-[ ] A taks that needs to be done  
-[x] A task that is done
+ 
+You **need a normal list** and square brackets after the list-item symbol.
+ 
+- [ ] A taks that needs to be done  
+- [x] A task that is done
 
 Code
 
 ```text
-[ ] A taks that needs to be done
-[x] A task that is done
+- [ ] A taks that needs to be done
+- [x] A task that is done
+```
+
+Unicode
+
+- checked ☒
+- not checked ☐
+
+Emoji shortcode equivalent
+
+:white_check_mark:
+
+```text
+:white_check_mark:
 ```
 
 
