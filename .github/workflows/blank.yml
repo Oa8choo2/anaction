@@ -40,6 +40,7 @@ jobs:
     # Steps represent a sequence of tasks that will be executed as part of the job
     steps:
       # Checks-out your repository under $GITHUB_WORKSPACE, so your job can access it
+      # https://github.com/actions/checkout
       - uses: actions/checkout@v4
 
       # Runs a single command using the runners shell
@@ -80,8 +81,9 @@ jobs:
           echo '```' >> zdocs/docs/zensical.toml.md
           
       # add zensical    
+      # https://github.com/astral-sh/setup-uv
       - name: Install uv
-        uses: astral-sh/setup-uv@v7
+        uses: astral-sh/setup-uv@v8
 
       - name: update uv
 #        run: uv self update
@@ -136,8 +138,9 @@ jobs:
           ls -alrt
 
       # upload to ghpages
+      # https://github.com/actions/configure-pages
       - name: Setup Pages
-        uses: actions/configure-pages@v5
+        uses: actions/configure-pages@v6
         with:
           enablement: true
       - name: Upload artifact
